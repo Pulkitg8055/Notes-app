@@ -9,7 +9,7 @@ export default function App() {
 	const [User, setUser] = useState(null);
 	const [Error, setError] = useState(null);
 
-	handleAuth = (username, password) => {
+	function handleAuth(username, password) {
 		const Users = {
 			Praveen: 'Hello@123',
 			Pulkit: 'Hello',
@@ -25,11 +25,15 @@ export default function App() {
 			setUser({ Name: username });
 			setError(null);
 		}
-	};
+	}
 	return (
 		<div className='App'>
 			<Header dark={true}>GFG</Header>
-			{User ? <Welcome User={User.Name} /> : <Login />}
+			{User ? (
+				<Welcome User={User.Name} />
+			) : (
+				<Login handleAuth={handleAuth} />
+			)}
 		</div>
 	);
 }
