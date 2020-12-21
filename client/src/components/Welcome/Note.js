@@ -10,7 +10,7 @@ function Note({ CurrentNote, ...props }) {
 
 			<Route path='/:NoteID'>
 				<pre className='border rounded p-1 bg-light'>
-					JSON.stringify(props, null, 2)
+					{JSON.stringify(props, null, 2)}
 				</pre>
 			</Route>
 		</Switch>

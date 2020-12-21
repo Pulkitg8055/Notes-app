@@ -1,23 +1,27 @@
 import React from 'react';
+import { withRouter, Route, Switch, Link } from 'react-router-dom';
 
-export default function List({ Note, setCurrentNote, CurrentNote }) {
+function List({ Note }) {
 	return (
 		<>
 			<h3>Notes List</h3>
-			<ul className='list-group'>
+			<div className='list-group'>
 				{Note.map((item, key) => (
-					<li
+					<Link
+						to={'/note-' + key}
 						className={
 							'list-group-item list-group-item-action' +
-							(CurrentNote === key ? ' active' : '')
+							(false ? ' active' : '')
 						}
 						key={key}
-						onClick={() => setCurrentNote(key)}
+						// onCLick={() => setCurrentNote(key)}
 					>
 						{item}
-					</li>
+					</Link>
 				))}
-			</ul>
+			</div>
 		</>
 	);
 }
+
+export default withRouter(List);
