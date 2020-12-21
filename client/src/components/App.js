@@ -8,7 +8,6 @@ import '../styles/App.scss';
 export default function App() {
 	const [User, setUser] = useState('');
 	const [Error, setError] = useState('');
-	console.log(Error, 'app');
 
 	function handleLogout(e) {
 		e.preventDefault();
@@ -21,7 +20,7 @@ export default function App() {
 			Pulkit: 'Hello',
 			Shashi: '123456',
 		};
-		console.log(Users[username]);
+
 		if (!Users[username]) {
 			setUser(null);
 			setError('User not found');
