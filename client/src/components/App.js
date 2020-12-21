@@ -10,6 +10,11 @@ export default function App() {
 	const [Error, setError] = useState('');
 	console.log(Error, 'app');
 
+	function handleLogout(e) {
+		e.preventDefault();
+		setUser('');
+		setError('');
+	}
 	function handleAuth(username, password) {
 		const Users = {
 			Praveen: 'Hello@123',
@@ -33,7 +38,7 @@ export default function App() {
 			{/* {console.log(User, 1, handleAuth)} */}
 			<Header dark={true}>GFG</Header>
 			{User ? (
-				<Welcome User={User.Name} />
+				<Welcome User={User.Name} handleLogout={handleLogout} />
 			) : (
 				<Login handleAuth={handleAuth} errr={Error} />
 			)}
