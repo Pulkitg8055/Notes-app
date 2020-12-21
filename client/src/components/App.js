@@ -6,8 +6,9 @@ import Welcome from './Welcome/Welcome';
 import '../styles/App.scss';
 
 export default function App() {
-	const [User, setUser] = useState(null);
-	const [Error, setError] = useState(null);
+	const [User, setUser] = useState('');
+	const [Error, setError] = useState('');
+	console.log(Error, 'app');
 
 	function handleAuth(username, password) {
 		const Users = {
@@ -15,7 +16,8 @@ export default function App() {
 			Pulkit: 'Hello',
 			Shashi: '123456',
 		};
-		if (Users[username]) {
+		console.log(Users[username]);
+		if (!Users[username]) {
 			setUser(null);
 			setError('User not found');
 		} else if (Users[username] && Users[username] !== password) {
@@ -28,11 +30,12 @@ export default function App() {
 	}
 	return (
 		<div className='App'>
+			{/* {console.log(User, 1, handleAuth)} */}
 			<Header dark={true}>GFG</Header>
 			{User ? (
 				<Welcome User={User.Name} />
 			) : (
-				<Login handleAuth={handleAuth} />
+				<Login handleAuth={handleAuth} errr={Error} />
 			)}
 		</div>
 	);
