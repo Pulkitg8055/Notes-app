@@ -7,6 +7,7 @@ import '../styles/App.scss';
 
 export default function App() {
 	const [User, setUser] = useState(null);
+	const [Error, setError] = useState(null);
 
 	handleAuth = (username, password) => {
 		const Users = {
@@ -15,9 +16,14 @@ export default function App() {
 			Shashi: '123456',
 		};
 		if (Users[username]) {
+			setUser(null);
+			setError('User not found');
 		} else if (Users[username] && Users[username] !== password) {
+			setUser(null);
+			setError('Wrong Password');
 		} else {
 			setUser({ Name: username });
+			setError(null);
 		}
 	};
 	return (
