@@ -35,7 +35,6 @@ export default function App() {
 	}
 	return (
 		<div className='App'>
-			{/* {console.log(User, 1, handleAuth)} */}
 			<Header dark={true}>GFG</Header>
 			{User ? (
 				<Welcome User={User.Name} handleLogout={handleLogout} />

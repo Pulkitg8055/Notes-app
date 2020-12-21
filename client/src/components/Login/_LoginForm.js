@@ -18,7 +18,7 @@ export default function Loginform({ handleAuth, errr }) {
 
 	return (
 		<form className='LoginForm' onSubmit={handleSubmit}>
-			<h2>Login</h2>
+			<h3 className='mb-3'>Login</h3>
 
 			{errr && <div className={'alert alert-danger'}>{errr}</div>}
 			{[
