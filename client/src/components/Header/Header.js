@@ -3,12 +3,7 @@ import React from 'react';
 const Header = ({ dark, children, className }) => {
 	dark = !!dark ? 'dark' : 'light';
 	return (
-		<nav
-			className={
-				`navbar navbar-${dark} bg-${dark}` +
-				(className ? ' ' + className : '')
-			}
-		>
+		<nav className={`navbar navbar-${dark} bg-${dark} Header`}>
 			<span className='navbar-brand'>{children}</span>
 		</nav>
 	);
