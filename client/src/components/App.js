@@ -1,5 +1,10 @@
 import React from 'react';
+import Header from './Header/Header';
 
 export default function App() {
-	return <div>Hello</div>;
+	return (
+		<div className='App'>
+			<Header dark={true}>GFG</Header>
+		</div>
+	);
 }
