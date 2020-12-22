@@ -4,6 +4,7 @@ import { withRouter, Route, Switch } from 'react-router-dom';
 function Note({ CurrentNote, ...props }) {
 	return (
 		<Switch>
+			{console.log(props.match)}
 			<Route path='/' exact={true}>
 				Select somthing from left
 			</Route>
