@@ -16,14 +16,10 @@ export default function Welcome({ User, handleLogout }) {
 			<div className='row mt-3'>
 				<Route path={['/:NoteID', '/']}>
 					<div className='col-3'>
-						<List
-							Note={State.Note}
-							CurrentNote={State.CurrentNote}
-							// setCurrentNote={setCurrentNote}
-						/>
+						<List Note={State.Note} />
 					</div>
 					<div className='col-9'>
-						<Note CurrentNote={State.CurrentNote} />
+						<Note />
 					</div>
 				</Route>
 			</div>

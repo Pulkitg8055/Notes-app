@@ -1,17 +1,17 @@
 import React from 'react';
 import { withRouter, Route, Switch } from 'react-router-dom';
 
-function Note({ CurrentNote, ...props }) {
+function Note({ match }) {
 	return (
 		<Switch>
-			{console.log(props.match)}
+			{console.log(match)}
 			<Route path='/' exact={true}>
 				Select somthing from left
 			</Route>
 
 			<Route path='/:NoteID'>
 				<pre className='border rounded p-1 bg-light'>
-					{JSON.stringify(props, null, 2)}
+					{JSON.stringify(match, null, 2)}
 				</pre>
 			</Route>
 		</Switch>
