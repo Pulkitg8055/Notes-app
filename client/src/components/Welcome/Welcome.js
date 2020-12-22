@@ -7,7 +7,24 @@ import { Route } from 'react-router-dom';
 
 export default function Welcome({ User, handleLogout }) {
 	const [State, setState] = useState({
-		Note: ['Note 1', 'Note 2', 'Note 3'],
+		Notes: [
+			{
+				NoteID: 'hello',
+				Title: 'Hello World',
+				Desc:
+					'Hello World Hello World Hello World Hello World Hello World Hello World Hello World Hello World Hello World Hello World',
+			},
+			{
+				NoteID: 'faq',
+				Title: 'Frequently asked question',
+				Desc: 'What questions are you asking frequently',
+			},
+			{
+				NoteID: 'gfg',
+				Title: 'GeeksforGeeks',
+				Desc: 'Hello questions are you asking frequently',
+			},
+		],
 	});
 
 	return (
@@ -16,10 +33,10 @@ export default function Welcome({ User, handleLogout }) {
 			<div className='row mt-3'>
 				<Route path={['/:NoteID', '/']}>
 					<div className='col-3'>
-						<List Note={State.Note} />
+						<List Notes={State.Notes} />
 					</div>
 					<div className='col-9'>
-						<Note />
+						<Note Notes={State.Notes} />
 					</div>
 				</Route>
 			</div>

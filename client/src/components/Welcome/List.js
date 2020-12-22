@@ -1,13 +1,13 @@
 import React from 'react';
 import { withRouter, Link } from 'react-router-dom';
 
-function List({ Note, match }) {
+function List({ Notes, match }) {
 	return (
 		<>
-			<h3>Notes List</h3>
-			{console.log(match, 1)}
+			<h3 className='mb-3'>Notes List</h3>
+			{/* {console.log(match, 1)} */}
 			<div className='list-group'>
-				{Note.map((item, key) => (
+				{Notes.map((note, key) => (
 					<Link
 						to={'/note-' + key}
 						className={
@@ -20,7 +20,7 @@ function List({ Note, match }) {
 						key={key}
 						// onCLick={() => setCurrentNote(key)}
 					>
-						{item}
+						{note.Title}
 					</Link>
 				))}
 			</div>

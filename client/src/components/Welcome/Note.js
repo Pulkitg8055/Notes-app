@@ -1,21 +1,20 @@
 import React from 'react';
 import { withRouter, Route, Switch } from 'react-router-dom';
+import NoteContent from './_NoteContent';
+import NoteWelcome from './_NoteWelcome';
 
-function Note({ match }) {
+function Note({ match, Notes }) {
 	return (
 		<Switch>
 			{console.log(match)}
-			<Route path='/' exact={true}>
-				Select somthing from left
-			</Route>
+			<Route path='/' exact={true} component={NoteWelcome} />
 
-			<Route path='/:NoteID'>
-				<pre className='border rounded p-1 bg-light'>
-					{JSON.stringify(match, null, 2)}
-				</pre>
-			</Route>
+			<Route
+				path='/:NoteID'
+				render={(rp) => <NoteContent {...rp} Notes={Notes} />}
+			/>
 		</Switch>
 	);
 }
 
-export default withRouter(Note);
+export default Note;
