@@ -14,24 +14,7 @@ export default function App() {
 		setUser('');
 		setError('');
 	}
-	function handleAuth(username, password) {
-		const Users = {
-			Praveen: 'Hello@123',
-			Pulkit: 'Hello',
-			Shashi: '123456',
-		};
-
-		if (!Users[username]) {
-			setUser(null);
-			setError('User not found');
-		} else if (Users[username] && Users[username] !== password) {
-			setUser(null);
-			setError('Wrong Password');
-		} else {
-			setUser({ Name: username });
-			setError(null);
-		}
-	}
+	function handleAuth(username, password) {}
 	return (
 		<div className='App'>
 			<Header dark={true}>GFG</Header>
