@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Login from './Login/Login';
 import Welcome from './Welcome/Welcome';
 import '../styles/App.scss';
+import { AuthUser } from '../services/User';
 
 export default function App() {
 	const [User, setUser] = useState('');
@@ -14,7 +15,19 @@ export default function App() {
 		setUser('');
 		setError('');
 	}
-	function handleAuth(username, password) {}
+
+	function handleAuth(username, password) {
+		AuthUser(username, password)
+			.then((res) => {
+				setUser(res.data.Message);
+				setError(null);
+			})
+			.catch((error) => {
+				setUser(null);
+				setError(error.response.data.Message);
+			});
+	}
+
 	return (
 		<div className='App'>
 			<Header dark={true}>GFG</Header>

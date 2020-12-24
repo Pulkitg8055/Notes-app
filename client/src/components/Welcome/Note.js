@@ -6,7 +6,6 @@ import NoteWelcome from './_NoteWelcome';
 function Note({ match, Notes }) {
 	return (
 		<Switch>
-			{console.log(match)}
 			<Route path='/' exact={true} component={NoteWelcome} />
 
 			<Route
